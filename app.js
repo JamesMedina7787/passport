@@ -24,7 +24,7 @@ const User = sequelize.define('user', {
   lastName: Sequelize.STRING,
   firstName: Sequelize.STRING,
 	username: Sequelize.STRING,
-	password: Sequelize.STRING
+	password: Sequelize.STRING,
   cell: Sequelize.STRING,
   email: Sequelize.STRING
 })
@@ -173,16 +173,16 @@ app.get('/register', (req, res)=>{
 	return res.render('register')
 })
 
-app.post('/signup', function(req,res, next){
-	passport.authenticate('local-signup', function(err, user){
-		if (err) {
-			return next(err);
-		} else {
-			return res.redirect('/login')
-		}
-	})(req, res, next);
-//	})
-});
+// app.post('/signup', function(req,res, next){
+// 	passport.authenticate('local-signup', function(err, user){
+// 		if (err) {
+// 			return next(err);
+// 		} else {
+// 			return res.redirect('/login')
+// 		}
+// 	})(req, res, next);
+// //	})
+// });
 
 app.post('/login', function(req,res,next){
 		passport.authenticate('local-login', function(err, user){
