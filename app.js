@@ -8,7 +8,7 @@ const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const LocalStrategy = require('passport-local').Strategy
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
-
+const plugs = require('./variables')
 const Op = Sequelize.Op
 const sequelize = new Sequelize(plugs.tableName, plugs.dialect, plugs.pw,{
    host: plugs.localhost,
